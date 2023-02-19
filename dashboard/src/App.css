@@ -1,0 +1,52 @@
+body {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.App {
+  text-align: center;
+
+}
+
+.tabs {
+  border-style: solid;
+  border-width: 2px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.content {
+  text-align: center;
+}
+
+/*
+.rc-tabs-content {
+}
+
+.rc-tabs {
+  border: none !important;
+}
+.rc-tabs-tab {
+  padding: 5px;
+  text-transform: capitalize;
+}
+.rc-tabs-tab .rc-tabs-tab-btn {
+  font-weight: normal;
+}
+.rc-tabs-tab.rc-tabs-tab-active {
+  background: ececec;
+  color: #00a6f8;
+}
+.rc-tabs-ink-bar {
+  background: #59c7fd !important;
+}
+.rc-tabs-content-holder {
+  padding: 10px;
+  background: #ececec;
+}
+*/
