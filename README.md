@@ -91,7 +91,7 @@ To set up application, follow these steps:
 ### CONTRIBUTION GUIDELINES
 This section should offer guidance on where and how users can contribute to your code, identify bugs, and propose improvements
 LINKS:
-> 1. Main repository: (https://github.com/TREYCSE/triviaGame)
+> 1. Main repository: (https://github.com/TREYCSE/ReactUI)
 > 2. Issue Tracker: (https://docs.google.com/spreadsheets/d/1h3rOtnA9zg10dT5oqklCbmK6vP9EDftnQArKYl7rBWg/edit#gid=1609337283)
 
 ## Authors
