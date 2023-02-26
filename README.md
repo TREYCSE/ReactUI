@@ -17,22 +17,17 @@ Therefore, I used the NSA API to render in to build a mock using React.js, and a
 > 2. setToggleTab -
 
 ## Features
-1. BRONZE:  significant progress.
-> 
+1. BRONZE:  significant progress: 
 
-2. SILVER: in progress.
->1. 
->2. 
+2. SILVER: in progress: 
 
-3. Gold: incomplete.
-> 1. 
-
-
+3. Gold: incomplete:
 
 ## Technologies
 >1. 
 >2. 
 >3. 
+
 
 ### Prerequisites to Build - React.js, Axios
 
@@ -97,7 +92,7 @@ To set up application, follow these steps:
 This section should offer guidance on where and how users can contribute to your code, identify bugs, and propose improvements
 LINKS:
 > 1. Main repository: (https://github.com/TREYCSE/triviaGame)
-> 2. Issue Tracker: (https://docs.google.com/spreadsheets/d/1h3rOtnA9zg10dT5oqklCbmK6vP9EDftnQArKYl7rBWg/edit#gid=0)
+> 2. Issue Tracker: (https://docs.google.com/spreadsheets/d/1h3rOtnA9zg10dT5oqklCbmK6vP9EDftnQArKYl7rBWg/edit#gid=1609337283)
 
 ## Authors
   - **Billie Thompson** - *Provided README Template* -
