@@ -11,6 +11,11 @@ Therefore, I used the NSA API to render in to build a mock using React.js, and a
 ## NASA Website Snapshot
   ![image](https://i.imgur.com/6rDHZth.jpg)
 
+## PROGRESS - Coding Tracker
+  ![image](-screenshot coding tracker)
+> 1. useEffect - 
+> 2. setToggleTab -
+
 ## Features
 1. BRONZE:  significant progress.
 > 
@@ -19,7 +24,7 @@ Therefore, I used the NSA API to render in to build a mock using React.js, and a
 >1. 
 >2. 
 
-3. Gold: INCOMPLETE‼
+3. Gold: incomplete.
 > 1. 
 
 
@@ -58,7 +63,6 @@ JSON
 
 ## API
 
-
     saveScore = e => {
         e.preventDefault();
 
@@ -79,7 +83,7 @@ AXIOS - what is used for this application.
 > 1. 
 > 2. 
 > 3. 
-> 4. 
+
 
 
 ### Installation Instructions / Getting Started
