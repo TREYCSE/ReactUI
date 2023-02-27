@@ -10,13 +10,13 @@ useEffect(() => {
     getData();
 }, []);
 
-//get correct API link, changing end of URL gets axios error
 const getData = () => {
-    const ENDPOINT = '';
+    const ENDPOINT = 'https://api.nasa.gov/planetary/earth/imagery?lon=100.75&lat=1.5&date=2014-02-01&api_key=QBGjJ6wTBYcDFbjcst4mzrImNL9n4jP74ggi9vZp';
     axios.get(ENDPOINT)
 
     .then((response) => {
         console.log("RES", response.data);
+        console.log(typeof posts, posts)
     if(response) {
         setPosts(response.data)
     }else {
@@ -26,18 +26,14 @@ const getData = () => {
     .catch((error) => {
         console.log("ERROR", error);
     });
+    
 };
-
-console.log(posts)
 
 return (
     <div>
-    <h1></h1>
-
-    { posts.length > 0 ?  <ul> { posts.map(( posts, i ) => <li key={i}>{posts.id}</li>) } </ul>  : <p>Loading...</p> } 
-
+    <h1>GET OUTTA ERE!🛸</h1>
     </div>
   );
 }
 
-//UPDATE ONCE FUNCTIONING IN APOD - syntax is dif +
+//UPDATE ONCE FUNCTIONING IN APOD - syntax is dif - { posts.length > 0 ?  <ul> { posts.map(( posts, i ) => <li key={i}>{posts.id}</li>) } </ul>  : <p>Loading...</p> } 
