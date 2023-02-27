@@ -20,20 +20,20 @@ const toggleTab = (index)  => {
                 <div className="tabs" onClick={() => toggleTab(4)}>Tab 4</div>
             </div>
 
-            <div className=  {toggleState === 1 ? "content active-content: content"}>
+            <div className= "content active-content: content">
                 <div className="content active-content">
                     <h2> API link to page #1 </h2>
                 </div>
 
-                <div className= {toggleState === 2 ? "content active-content: content"}>
+                <div className="content active-content">
                     <h2> API link to page #2 </h2>
                 </div>
 
-                <div className={toggleState === 3 ? "content active-content: content"}>
+                <div className="content active-content">
                     <h2> API link to page #3 </h2>
                 </div>
 
-                <div className={toggleState === 4 ? "content active-content: content"}>
+                <div className="content active-content">
                     <h2> API link to page #4</h2>
                 </div>
             </div>
@@ -43,6 +43,11 @@ const toggleTab = (index)  => {
     )
 }
 
-//something wrong with the syntax of the toggleState?
+/*something wrong with the syntax of the toggleState?
+{toggleState === 1 ? "content active-content: content"}
+{toggleState === 2 ? "content active-content: content"}
+{toggleState === 3 ? "content active-content: content"}
+{toggleState === 4 ? "content active-content: content"}
+*/
 
 
