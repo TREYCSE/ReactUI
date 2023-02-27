@@ -11,7 +11,7 @@ Therefore, I used the NSA API to render in to build a mock using React.js, and a
   ![image](https://i.imgur.com/6rDHZth.jpg)
 
 ## PROGRESS - Coding Tracker
-  ![image](https://i.imgur.com/UzB44CK.jpg)
+  ![image](https://i.imgur.com/ZPn7tho.jpg)
 > 1. useEffect - 
 > 2. setToggleTab -
 
