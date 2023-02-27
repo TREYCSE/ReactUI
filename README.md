@@ -4,9 +4,8 @@ Assigned from:
 [GA users only](https://git.generalassemb.ly/dc-wdi-react-redux/api-ui-pattern)
 
 ## Description
-The NASA official website is full of cool scientific facts for strangers for science and those who are married to it.
+The NASA official website is full of cool scientific facts for strangers of science and those who are married to it.
 Therefore, I used the NSA API to render in to build a mock using React.js, and axios to get the API.
-
 
 ## NASA Website Snapshot
   ![image](https://i.imgur.com/6rDHZth.jpg)
@@ -17,67 +16,51 @@ Therefore, I used the NSA API to render in to build a mock using React.js, and a
 > 2. setToggleTab -
 
 ## Features
-1. BRONZE:  significant progress: 
+1. BRONZE:  significant progress: fetch and render all api to pages as mock
 
-2. SILVER: in progress: 
+2. SILVER: in progress: tbd
 
-3. Gold: incomplete:
+3. Gold: incomplete: tbd
 
-## Technologies
->1. 
->2. 
->3. 
+## Technologies/Requirements for the software and other tools to build, test and push
+>1. React.js
+>2. Node.js
+>3. Axios
 
+## Fetching NASA's API w/ Axios
+   useEffect(() => {
+        const ENDPOINT = 'https://api.nasa.gov/planetary/apod?api_key=6HbYrzwibnjgCvHxIbCyHMCDgUVsJ5ALKVOshnaR';
+        axios.get(ENDPOINT)
 
-### Prerequisites to Build - React.js, Axios
-
-Requirements for the software and other tools to build, test and push 
-- [etc...](https://www.w3schools.com/js/js_htmldom.asp)
-
-### React.js 
-
-1. 
-> 1. 
-> 2. 
-> 2. 
-
-2. 
-
-### JSON/JSX/DOM/AJAX
-JSON
-
-        startGame = () => {
-          questionCounter = 0;
-          score = 0;
-          availableQuestions = [...questions];
-          console.log(availableQuestions);
-          getNewQuestion();
-        };
+        .then((response) => {
+            console.log("RES", response.data);
+        if(response.data) {
+            console.log(response.data)
+            setPosts(response.data)
+            //console.log(setPosts)
+            console.log(typeof posts, posts) //i.e. an object, empty array delared inside object - 
+        }else {
+            console.log("ERROR");
+            }
+        })
+        .catch((error) => {
+            console.log("ERROR", error);
+        });
+    }, []);
 
 
+## Main Error in progress
+posts.map will not work because it is not an array so it can not be iterated over to render API data to screen. Need to remove need for function as dependency to get useEffect to work properly and properly fill the posts array so that it may be mapped.
 
-## API
+Current status: (excerpt from https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies)
 
-    saveScore = e => {
-        e.preventDefault();
+"🤔 Question: How do I correctly fetch data inside useEffect? What is []?
 
-        const score = {
-            score: Math.floor(Math.random() * 100),
-            name: username.value
-        };
-        highScores.push(score);
-        highScores.push((a, b) => b.score - a.score);
-        highScores.splice(5);
+This article is a good primer on data fetching with useEffect. Make sure to read it to the end! It’s not as long as this one.
+[] means the effect doesn’t use any value that participates in React data flow, and is for that reason safe to apply once.
+It is also a common source of bugs when the value actually is used. You’ll need to learn a few strategies
+(primarily useReducer and useCallback)that can remove the need for a dependency instead of incorrectly omitting it."
 
-        localStorage.setItem("highScores", JSON.stringify(highScores));
-        window.location.assign("index.html");
-    };
-
-
-AXIOS - what is used for this application.
-> 1. 
-> 2. 
-> 3. 
 
 
 
@@ -87,12 +70,6 @@ To set up application, follow these steps:
 >(2) CLONE this repository to your local
 >(3) NEW local branch
 >(4) OPEN, edit, and commit
-
-### CONTRIBUTION GUIDELINES
-This section should offer guidance on where and how users can contribute to your code, identify bugs, and propose improvements
-LINKS:
-> 1. Main repository: (https://github.com/TREYCSE/ReactUI)
-> 2. Issue Tracker: (https://docs.google.com/spreadsheets/d/1h3rOtnA9zg10dT5oqklCbmK6vP9EDftnQArKYl7rBWg/edit#gid=1609337283)
 
 ## Authors
   - **Billie Thompson** - *Provided README Template* -
