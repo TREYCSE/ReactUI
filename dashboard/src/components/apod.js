@@ -1,20 +1,45 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react'
+import  React from 'react';
+import { useEffect } from 'react'
 import axios from "axios";
 
 export default function Apod( ) {
-    GetApi();
+function GetApi ()  {
+    const response = response.data
+
+    const getData = () => {
+    const ENDPOINT = 'https://api.nasa.gov/planetary/apod?api_key=6HbYrzwibnjgCvHxIbCyHMCDgUVsJ5ALKVOshnaR';
+    axios.get(ENDPOINT)
+        .then((response) => {
+            console.log("RES", response.data);
+        if(response.data) {
+            console.log(response.data)
+        }else {
+            console.log("ERROR");
+            }
+        })
+        .catch((error) => {
+            console.log("ERROR", error);
+        }); 
+};
+useEffect(() => {
+    getData();
+}, []);
+    return <h1>{response.data}</h1>
+    
+}
     return (
         <div>
             <h1>Astronomy Picture of the Day!</h1>
+            <h1 onClick={GetApi}>test</h1>
         </div>
     );
 }
 
+//not getting array back just getting one object at a time, so NO MAPPING, reconfigure my architecture, every time click get an object back, 
+//just render it don't map over it
 
-function GetApi ()  {
 
-const [posts, setPosts] = useState([]);
+//const [posts, setPosts] = useState([]);
 /* useEffect ERROR notes - continue debugging at later date (the reason why cannot iterate over posts array - it is not an array but an object)
 🤔 Question: How do I correctly fetch data inside useEffect? What is []?
 
@@ -23,7 +48,7 @@ This article is a good primer on data fetching with useEffect. Make sure to read
 It is also a common source of bugs when the value actually is used. You’ll need to learn a few strategies
 (primarily useReducer and useCallback)that can remove the need for a dependency instead of incorrectly omitting it.
 */
-   useEffect(() => {
+   /*useEffect(() => {
         const ENDPOINT = 'https://api.nasa.gov/planetary/apod?api_key=6HbYrzwibnjgCvHxIbCyHMCDgUVsJ5ALKVOshnaR';
         axios.get(ENDPOINT)
 
@@ -32,7 +57,7 @@ It is also a common source of bugs when the value actually is used. You’ll nee
         if(response.data) {
             console.log(response.data)
             setPosts(response.data)
-            //console.log(setPosts)
+            console.log(posts)
             console.log(typeof posts, posts) //i.e. an object, empty array delared inside object - 
         }else {
             console.log("ERROR");
@@ -43,7 +68,7 @@ It is also a common source of bugs when the value actually is used. You’ll nee
         });
     }, []);
 
-
+*/
 /* CODE WRITTEN BUT NEVER RAN DUE TO ERROR - rendering specific pieces of data from the API, 
 not working b/c need to edit useEffect (notes on bug below)
 
@@ -64,8 +89,3 @@ not working b/c need to edit useEffect (notes on bug below)
     </div>
     ));
 */
-
-    return  <div> <h1>POSTS MAP PENDING...</h1> 
-    
-    </div>
-}
