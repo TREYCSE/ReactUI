@@ -1,42 +1,29 @@
 import  React from 'react';
-import { useEffect } from 'react'
+import { useState} from 'react'
 import axios from "axios";
 
 export default function Apod( ) {
-function GetApi ()  {
-    const response = response.data
-
-    const getData = () => {
-    const ENDPOINT = 'https://api.nasa.gov/planetary/apod?api_key=6HbYrzwibnjgCvHxIbCyHMCDgUVsJ5ALKVOshnaR';
-    axios.get(ENDPOINT)
+const [api, setApi] = useState();
+const getApi = async() => {
+    const apis = await axios.get('https://api.nasa.gov/planetary/apod?api_key=6HbYrzwibnjgCvHxIbCyHMCDgUVsJ5ALKVOshnaR')
+    //axios.get(apis)
         .then((response) => {
             console.log("RES", response.data);
         if(response.data) {
-            console.log(response.data)
+            return response.data
         }else {
             console.log("ERROR");
             }
         })
-        .catch((error) => {
-            console.log("ERROR", error);
-        }); 
-};
-useEffect(() => {
-    getData();
-}, []);
-    return <h1>{response.data}</h1>
-    
+        setApi(apis)
+    return <div>{api}</div>
 }
-    return (
-        <div>
-            <h1>Astronomy Picture of the Day!</h1>
-            <h1 onClick={GetApi}>test</h1>
-        </div>
-    );
+getApi();
 }
 
+
 //not getting array back just getting one object at a time, so NO MAPPING, reconfigure my architecture, every time click get an object back, 
-//just render it don't map over it
+//just render it don't map over it {api}
 
 
 //const [posts, setPosts] = useState([]);
@@ -48,7 +35,15 @@ This article is a good primer on data fetching with useEffect. Make sure to read
 It is also a common source of bugs when the value actually is used. You’ll need to learn a few strategies
 (primarily useReducer and useCallback)that can remove the need for a dependency instead of incorrectly omitting it.
 */
-   /*useEffect(() => {
+   /*
+   
+       return (
+        <div>
+            <h1>Astronomy Picture of the Day!</h1>
+            <button onClick={api}>button</button>
+        </div>
+    );
+   useEffect(() => {
         const ENDPOINT = 'https://api.nasa.gov/planetary/apod?api_key=6HbYrzwibnjgCvHxIbCyHMCDgUVsJ5ALKVOshnaR';
         axios.get(ENDPOINT)
 
